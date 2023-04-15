@@ -55,7 +55,7 @@
                                     <label for="">Payment Mode:</label>
                                     <select class="form-select" name="mode">
                                         <option value="Cash">Cash</option>
-                                        <option value="Check">Check</option>
+                                        <option value="Check">Cheque</option>
                                         <option value="Digital Payment">Digital Payment</option>
                                         <option value="Net Banking">Net Banking</option>
                                         <option value="Mobile Banking">Mobile Banking</option>
@@ -117,7 +117,7 @@
                                     <label for="">Payment Mode:</label>
                                     <select class="form-select" name="mode" required>
                                         <option value="Cash">Cash</option>
-                                        <option value="Check">Check</option>
+                                        <option value="Check">Cheque</option>
                                         <option value="Digital Payment">Digital Payment</option>
                                         <option value="Net Banking">Net Banking</option>
                                         <option value="Mobile Banking">Mobile Banking</option>
@@ -167,7 +167,13 @@
                         <td>{{i.payee_name}}</td>
                         <td>{{i.Amount}}</td>
                         <td style="display: flex;">
-                            <form action="/update-form/" method="post">{% csrf_token %}
+                            <form action="/details/" method="post">{% csrf_token %}
+                                <input type="hidden" value="{{i.id}}" name="id" id="">
+                                <input type="hidden" value="{{tab_name1}}" name="tab_name" id="">
+                                <input type="hidden" value="{{redirect}}" name="redirect" id="">
+                                <button type="submit" class="btn btn-primary">View</button>
+                            </form>
+                            <form action="/update-form/" method="post" style="margin-left: 10px;">{% csrf_token %}
                                 <input type="hidden" value="{{i.id}}" name="id" id="">
                                 <input type="hidden" value="{{tab_name1}}" name="tab_name" id="">
                                 <input type="hidden" value="{{redirect}}" name="redirect" id="">

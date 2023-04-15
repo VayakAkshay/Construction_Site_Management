@@ -7,12 +7,12 @@ def Loginsystem(request):
     if request.method == "POST":
         username = request.POST.get("username")
         password = request.POST.get("password")
-        print(username)
-        print(password)
         user = authenticate(username = username,password = password)
-        
         if user is not None:
             login(request,user)
+            print("User id = ",request.user.id)
+            messages.success(request,"You are logged in successfully")
+            return redirect("/")
         else:
             messages.warning(request,"Please Enter Valid username and password.")
         return redirect("/")
