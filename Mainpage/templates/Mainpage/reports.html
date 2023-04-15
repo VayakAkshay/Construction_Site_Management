@@ -1,0 +1,257 @@
+{% extends 'Mainpage/navbar.html' %}
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% block title %}All Reports% endblock %}
+    <script src="https://kit.fontawesome.com/6e04d39f81.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    {% block style %}
+    <link rel="stylesheet" href="{% static 'css/material.css' %}">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
+    <style>
+        .adv_sec {
+            width: 100%;
+            padding-top: 20px;
+        }
+
+        .adv_in {
+            width: 100%;
+            padding-top: 60px;
+        }
+        .container .adv_in .row a{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .adv_box {
+            width: 100%;
+            position: relative;
+            transition: 0.3s ease-in-out;
+            text-align: center;
+            margin-bottom: 25px;
+            position: relative;
+            -webkit-box-shadow: -10px 17px 46px -25px rgba(0, 0, 0, 0.68);
+            -moz-box-shadow: -10px 17px 46px -25px rgba(0, 0, 0, 0.68);
+            box-shadow: -10px 17px 46px -25px rgba(0, 0, 0, 0.68);
+            height: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #42c2ff;
+        }
+
+        .adv_box img {
+            max-width: 100%;
+            -webkit-filter: invert(100%);
+            filter: invert(100%);
+        }
+
+        .adv_box::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0px;
+            width: 100%;
+            height: 100%;
+            background-size: contain;
+            opacity: 0.1;
+        }
+
+        .adv_in .row .col-12:nth-child(1) .adv_box {
+            background: #42c2ff;
+            color: #000;
+        }
+
+
+        .adv_box .media-body h5 {
+            font-size: 16px;
+            color: #000;
+            font-weight: bold;
+            text-align: left;
+        }
+
+        .adv_box .media-body p {
+            font-size: 15px;
+            color: #000;
+            text-align: justify;
+            text-align: left;
+        }
+
+        .adv_box .media {
+            align-items: center !important;
+        }
+
+        .adv_box:hover {
+            background: #fff !important;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    </style>
+    {% endblock %}
+</head>
+
+<body>
+    {% block body %}
+    <div class="container">
+        <div class="p-5 bottom-radious bg-light shadow-lg" style="background-color: white;">
+            <h1 style="text-align: center;">All Reports</h1>
+            <section class="adv_sec">
+                <div class="container">
+                    <div class="adv_in">
+                        <div class="row">
+
+                            <a href="/materials/">
+                                <div class="col-lg-4 col-md-6 col-12">
+                                    <div class="adv_box">
+                                        <div class="media">
+                                            <i style="font-size:50px;" class="fa">&#xf00b;</i>
+                                            <div class="media-body" style="margin-top: 10px;">
+                                                <h5>Used Materials</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a href="/manage-machines/">
+                                <div class="col-lg-4 col-md-6 col-12">
+                                    <div class="adv_box">
+                                        <div class="media">
+                                            <i class="fa-solid fa-list" style="font-size: 50px;"></i>
+                                            <div class="media-body" style="margin-top: 10px;">
+                                                <h5>Rent Machinery</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a href="/transport/">
+                                <div class="col-lg-4 col-md-6 col-12">
+                                    <div class="adv_box">
+                                        <div class="media">
+                                            <i class="fa-solid fa-truck" style="font-size: 50px;"></i>
+                                            <div class="media-body" style="margin-top: 10px;">
+                                                <h5>Transport</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a href="/labour/">
+                                <div class="col-lg-4 col-md-6 col-12">
+                                    <div class="adv_box">
+                                        <div class="media">
+                                            <i class="fa-solid fa-user" style="font-size: 50px;"></i>
+                                            <div class="media-body" style="margin-top: 10px;">
+                                                <h5>Manage Labour</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="/godown/">
+                                <div class="col-lg-4 col-md-6 col-12">
+                                    <div class="adv_box">
+                                        <div class="media">
+                                            <i class="fa-solid fa-building" style="font-size: 50px;"></i>
+                                            <div class="media-body" style="margin-top: 10px;">
+                                                <h5>Godown Stocks</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="/accounting/">
+                                <div class="col-lg-4 col-md-6 col-12">
+                                    <div class="adv_box">
+                                        <div class="media">
+                                            <i class="fa-solid fa-coins" style="font-size: 50px;"></i>
+                                            <div class="media-body" style="margin-top: 10px;">
+                                                <h5>Income Data</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="/accounting/">
+                                <div class="col-lg-4 col-md-6 col-12">
+                                    <div class="adv_box">
+                                        <div class="media">
+                                            <i class="fa-solid fa-coins" style="font-size: 50px;"></i>
+                                            <div class="media-body" style="margin-top: 10px;">
+                                                <h5>Expense Data</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a href="/work-progress/">
+                                <div class="col-lg-4 col-md-6 col-12">
+                                    <div class="adv_box">
+                                        <div class="media">
+                                            <i class="fa-brands fa-creative-commons-nd" style="font-size: 50px;"></i>
+                                            <div class="media-body" style="margin-top: 10px;">
+                                                <h5>Work Progress</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="/purchase-machine/">
+                                <div class="col-lg-4 col-md-6 col-12">
+                                    <div class="adv_box">
+                                        <div class="media">
+                                            <i class="fa-solid fa-money-bill" style="font-size: 50px;"></i>
+                                            <div class="media-body" style="margin-top: 10px;">
+                                                <h5>Machinery Purchase</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <a href="/attendance/">
+                                <div class="col-lg-4 col-md-6 col-12">
+                                    <div class="adv_box">
+                                        <div class="media">
+                                            <i class="fa-solid fa-user" style="font-size: 50px;"></i>
+                                            <div class="media-body" style="margin-top: 10px;">
+                                                <h5>Labour Attendance</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    {% endblock %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
+{% block script %}
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
+<script>
+
+</script>
+{% endblock %}

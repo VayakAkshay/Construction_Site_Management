@@ -1,0 +1,14 @@
+.container{
+    padding: 20px;
+    display: block;
+}
+.container .heading{
+    width: 100%;
+}
+.container .accordion{
+    margin-top: 50px;
+    background: white;
+}
+.accordion-collapse{
+    padding: 20px;
+}

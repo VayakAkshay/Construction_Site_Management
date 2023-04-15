@@ -1,0 +1,473 @@
+{% extends 'Mainpage/basic.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Construction Website</title>
+   <link rel="stylesheet" href="{% static 'css/style.css' %}">
+   {% block style %}
+   <style>
+      .sliding1 {
+         background-image: url('{% static "images/home-slide-1.jpg" %}');
+         background-repeat: no-repeat;
+      }
+
+      .sliding2 {
+         background-image: url('{% static "images/home-slide-2.jpg" %}');
+         background-repeat: no-repeat;
+      }
+
+      .sliding3 {
+         background-image: url('{% static "images/home-slide-3.jpg" %}');
+         background-repeat: no-repeat;
+      }
+   </style>
+   {% endblock %}
+</head>
+
+<body>
+   {% block body %}
+
+
+   <div class="contact-info">
+
+      <div id="close-contact-info" class="fas fa-times"></div>
+
+      <div class="info">
+         <i class="fas fa-phone"></i>
+         <h3>phone number</h3>
+         <p>+123-456-7890</p>
+         <p>+111-222-3333</p>
+      </div>
+
+      <div class="info">
+         <i class="fas fa-envelope"></i>
+         <h3>email address</h3>
+         <p>shaikhanas@gmail.com</p>
+         <p>anasbhai@gmail.com</p>
+      </div>
+
+      <div class="info">
+         <i class="fas fa-map-marker-alt"></i>
+         <h3>office address</h3>
+         <p>mumbai, india - 400104</p>
+      </div>
+
+      <div class="share">
+         <a href="#" class="fab fa-facebook-f"></a>
+         <a href="#" class="fab fa-twitter"></a>
+         <a href="#" class="fab fa-instagram"></a>
+         <a href="#" class="fab fa-linkedin"></a>
+      </div>
+
+   </div>
+
+   <section class="home" id="home">
+
+      <div class="swiper home-slider">
+
+         <div class="swiper-wrapper">
+
+            <section class="swiper-slide slide sliding1">
+               <div class="content">
+                  <h3>we provide best service</h3>
+                  <p>We offer a comprehensive range of construction services for clients across India.</p>
+                  <a href="#about" class="btn">get started</a>
+               </div>
+            </section>
+
+            <section class="swiper-slide slide sliding2">
+               <div class="content">
+                  <h3>making dream come to life</h3>
+                  <p>Our team of experienced professionals is committed to delivering high-quality workmanship and
+                     exceptional customer service on every project we undertake.</p>
+                  <a href="#about" class="btn">get started</a>
+               </div>
+            </section>
+
+            <section class="swiper-slide slide sliding3">
+               <div class="content">
+                  <h3>from concept to creation</h3>
+                  <p>Our construction process begins with an initial consultation to discuss your needs and goals for
+                     the project.</p>
+                  <a href="#about" class="btn">get started</a>
+               </div>
+            </section>
+
+         </div>
+
+         <div class="swiper-button-next"></div>
+         <div class="swiper-button-prev"></div>
+
+      </div>
+
+   </section>
+
+   <section class="about" id="about">
+
+      <h1 class="heading"> about us </h1>
+
+      <div class="row">
+
+         <div class="video">
+            <video src="{% static 'images/about-vid.mp4' %}" loop muted autoplay></video>
+         </div>
+
+         <div class="content">
+            <h3>We will provide you the best work which you dreamt for!</h3>
+            <p>Our team of experienced professionals is committed to delivering high-quality workmanship and exceptional
+               customer service on every project we undertake.</p>
+            <a href="#services" class="btn">read more</a>
+         </div>
+
+      </div>
+
+      <div class="box-container">
+
+         <div class="box">
+            <h3>10+</h3>
+            <p>years of experience</p>
+         </div>
+
+         <div class="box">
+            <h3>1500+</h3>
+            <p>project completed</p>
+         </div>
+
+         <div class="box">
+            <h3>790+</h3>
+            <p>satiesfied clients</p>
+         </div>
+
+         <div class="box">
+            <h3>450+</h3>
+            <p>active workers</p>
+         </div>
+
+      </div>
+
+   </section>
+
+   <section class="services" id="services">
+
+      <h1 class="heading"> our services </h1>
+
+      <div class="box-container">
+
+         <div class="box">
+            <img src="{% static 'images/service-1.png' %}" alt="">
+            <h3>building construction</h3>
+            <p>At Digital Construction Management system , we specialize in building construction services that meet the needs of our clients
+               across india.</p>
+         </div>
+
+         <div class="box">
+            <img src="{% static 'images/service-2.png' %}" alt="">
+            <h3>house renovation</h3>
+            <p>At Digital Construction Management system, we are committed to delivering exceptional results and exceptional customer service on
+               every project we undertake.</p>
+         </div>
+
+         <div class="box">
+            <img src="{% static 'images/service-3.png' %}" alt="">
+            <h3>architechture design</h3>
+            <p>At Digital Construction Management system, we believe that architecture is more than just creating functional buildings - it's
+               about creating spaces that inspire, evoke emotion, and stand the test of time.</p>
+         </div>
+
+         <div class="box">
+            <img src="{% static 'images/service-4.png' %}" alt="">
+            <h3>material supply</h3>
+            <p>At Digital Construction Management system, we provide high-quality materials for all your construction and renovation needs.</p>
+         </div>
+
+         <div class="box">
+            <img src="{% static 'images/service-5.png' %}" alt="">
+            <h3>construction consultant</h3>
+            <p>At Digital Construction Management system, we offer comprehensive construction consulting services to help our clients navigate
+               the complexities of the construction process.</p>
+         </div>
+
+         <div class="box">
+            <img src="{% static 'images/service-6.png' %}" alt="">
+            <h3>interior design</h3>
+            <p>At Digital Construction Management system, we offer a full range of interior design services to help you transform your space
+               into a beautiful and functional environment.</p>
+         </div>
+
+         <div class="box">
+            <img src="{% static 'images/service-7.png' %}" alt="">
+            <h3>building maintenance</h3>
+            <p>At Digital Construction Management system, we provide comprehensive building maintenance services to help our clients keep their
+               buildings in top condition.</p>
+         </div>
+
+         <div class="box">
+            <img src="{% static 'images/service-8.png' %}" alt="">
+            <h3>building renovation</h3>
+            <p>At Digital Construction Management system, we offer a comprehensive range of building renovation services to help our clients
+               breathe new life into their spaces.</p>
+         </div>
+
+      </div>
+
+   </section>
+
+   <section class="projects" id="projects">
+
+      <h1 class="heading"> our works </h1>
+
+      <div class="box-container">
+
+         <a href="{% static 'images/project-1.jpg' %}" class="box">
+            <div class="image">
+               <img src="{% static 'images/project-1.jpg' %}" alt="">
+            </div>
+            <div class="content">
+               <div class="info">
+                  <h3>dream home</h3>
+                  <p>construction, design</p>
+               </div>
+               <i class="fas fa-plus"></i>
+            </div>
+         </a>
+
+         <a href="{% static 'images/project-2.jpg' %}" class="box">
+            <div class="image">
+               <img src="{% static 'images/project-2.jpg' %}" alt="">
+            </div>
+            <div class="content">
+               <div class="info">
+                  <h3>Provide Machinery</h3>
+                  <p>construction</p>
+               </div>
+               <i class="fas fa-plus"></i>
+            </div>
+         </a>
+
+         <a href="{% static 'images/project-3.jpg' %}" class="box">
+            <div class="image">
+               <img src="{% static 'images/project-3.jpg' %}" alt="">
+            </div>
+            <div class="content">
+               <div class="info">
+                  <h3>Corporate Buildings</h3>
+                  <p>construction, design</p>
+               </div>
+               <i class="fas fa-plus"></i>
+            </div>
+         </a>
+
+         <a href="{% static 'images/project-4.jpg' %}" class="box">
+            <div class="image">
+               <img src="{% static 'images/project-4.jpg' %}" alt="">
+            </div>
+            <div class="content">
+               <div class="info">
+                  <h3>Cranes</h3>
+                  <p>construction</p>
+               </div>
+               <i class="fas fa-plus"></i>
+            </div>
+         </a>
+
+         <a href="{% static 'images/project-5.jpg' %}" class="box">
+            <div class="image">
+               <img src="{% static 'images/project-5.jpg' %}" alt="">
+            </div>
+            <div class="content">
+               <div class="info">
+                  <h3>Provide Materials</h3>
+                  <p>construction</p>
+               </div>
+               <i class="fas fa-plus"></i>
+            </div>
+         </a>
+
+         <a href="{% static 'images/project-6.jpg' %}" class="box">
+            <div class="image">
+               <img src="{% static 'images/project-6.jpg' %}" alt="">
+            </div>
+            <div class="content">
+               <div class="info">
+                  <h3>Provide Workers</h3>
+                  <p>construction, design</p>
+               </div>
+               <i class="fas fa-plus"></i>
+            </div>
+         </a>
+
+      </div>
+
+   </section>
+
+   <section class="reviews">
+
+      <h1 class="heading"> clients reviews </h1>
+
+      <div class="swiper reviews-slider">
+
+         <div class="swiper-wrapper">
+
+            <div class="swiper-slide slide">
+               <p>I am extremely happy with the services provided by Digital Construction Management system for my home renovation project. They
+                  were professional, efficient, and delivered high-quality workmanship. The team was great to work with,
+                  and they kept me informed every step of the way. I highly recommend Digital Construction Management system for any
+                  construction or renovation project!</p>
+               <div class="user">
+                  <img src="{% static 'images/pic-1.png' %}" alt="">
+                  <div class="info">
+                     <h3>Sarah D.</h3>
+                     <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="swiper-slide slide">
+               <p>I had a wonderful experience working with Digital Construction Management system on my commercial construction project. The
+                  team was knowledgeable, responsive, and took the time to understand my specific needs. They delivered
+                  the project on time and within budget, and the final result exceeded my expectations. I would
+                  definitely use Digital Construction Management system for future projects!</p>
+               <div class="user">
+                  <img src="{% static 'images/pic-2.png' %}" alt="">
+                  <div class="info">
+                     <h3>Sakshi Parekh</h3>
+                     <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="swiper-slide slide">
+               <p>We hired Digital Construction Management system for our home addition project, and they did an amazing job. They were
+                  professional, communicative, and worked within our budget. The team was friendly and respectful, and
+                  they kept the job site clean and safe. We are thrilled with the final result and would recommend
+                  Digital Construction Management system to anyone looking for a reliable and skilled construction company.</p>
+               <div class="user">
+                  <img src="{% static 'images/pic-3.png' %}" alt="">
+                  <div class="info">
+                     <h3>Karen and Mark W</h3>
+                     <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="swiper-slide slide">
+               <p>We had a great experience working with Digital Construction Management system on our office renovation project. They were able
+                  to work around our business operations and minimize disruptions, which was a huge plus. The team was
+                  professional, organized, and delivered high-quality work. We are very happy with the final result and
+                  would definitely use Digital Construction Management system again in the future.</p>
+               <div class="user">
+                  <img src="{% static 'images/pic-4.png' %}" alt="">
+                  <div class="info">
+                     <h3>Arti sign</h3>
+                     <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="swiper-slide slide">
+               <p>I hired Digital Construction Management system to build my new office building, and I'm so glad I did. Their team was
+                  incredibly skilled and worked tirelessly to ensure that the project was completed on time and within
+                  budget. They communicated with me regularly throughout the process, and the end result was even better
+                  than I had hoped. I would definitely use their services again in the future.</p>
+               <div class="user">
+                  <img src="{% static 'images/pic-5.png' %}" alt="">
+                  <div class="info">
+                     <h3>Dilip Patel</h3>
+                     <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="swiper-slide slide">
+               <p>I had a complex construction project that required a lot of planning and coordination, and Digital Construction Management system did an excellent job managing it from start to finish. They were responsive, proactive, and
+                  delivered the project on time and within budget. The team was great to work with and provided regular
+                  updates throughout the project. I would highly recommend Digital Construction Management system for any construction project.
+               </p>
+               <div class="user">
+                  <img src="{% static 'images/pic-6.png' %}" alt="">
+                  <div class="info">
+                     <h3>Shruti.</h3>
+                     <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+         </div>
+
+      </div>
+
+   </section>
+
+   <section class="contact" id="contact">
+
+      <h1 class="heading"> contact us </h1>
+
+      <div class="row">
+
+         <iframe class="map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15076.89592087332!2d72.8319697277345!3d19.14167056419224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b63aceef0c69%3A0x2aa80cf2287dfa3b!2sJogeshwari%20West%2C%20Mumbai%2C%20Maharashtra%20400047!5e0!3m2!1sen!2sin!4v1641716772852!5m2!1sen!2sin"
+            allowfullscreen="" loading="lazy"></iframe>
+
+         <form action="/contact/" method="post">{% csrf_token %}
+            <h3>get in touch</h3>
+            <input type="text" placeholder="name" name="name" class="box" required>
+            <input type="email" placeholder="email" name="email" class="box" required>
+            <input type="number" placeholder="phone" name="phone" class="box" required>
+            <textarea placeholder="message" name="message" class="box" id="" cols="30" rows="10" required></textarea>
+            <input type="submit" value="send message" class="btn">
+         </form>
+      </div>
+
+   </section>
+   {% endblock %}
+</body>
+{% block script %}
+<script>
+
+   lightGallery(document.querySelector('.projects .box-container'));
+
+</script>
+{% endblock %}
+
+</html>
