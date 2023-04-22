@@ -1,11 +1,11 @@
 from django.db import models
 import datetime
+from django.contrib.auth.models import User
 
 
 class SiteData(models.Model):
     id = models.AutoField
-    manager_id = models.TextField(max_length=100,default="")
-    manager_name = models.TextField(max_length=100,default="")
+    manager_user_name = models.ForeignKey(User,default="",on_delete=models.CASCADE)
     site_name = models.TextField(max_length=100,default="")
     
 

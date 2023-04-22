@@ -2,7 +2,7 @@ from django.contrib import admin
 from .models import SiteData,MaterialsData,RentMachineryData,TransportData,LabourData,LabourAttendance,StockData,IncomeData,ExpenseData,WorkProgreeData,MachineryPurchaseData,ContactData
 
 class SiteDataAdmin(admin.ModelAdmin):
-    list_display = ["manager_id","site_name"]
+    list_display = ["manager_user_name","site_name"]
 
 class MaterialsDataAdmin(admin.ModelAdmin):
     list_display = ["manager_id","Date","site_id","site_name","Material_name","actual_qty"]

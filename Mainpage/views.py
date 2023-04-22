@@ -36,18 +36,10 @@ def DashboardPage(request):
 
 def SitesPage(request):
     if request.user.is_authenticated:
-        sites_data = SiteData.objects.filter(manager_id = request.user.id).all().values()
-        site_data = SiteData()
-        if request.method == "POST":
-            site_name = request.POST.get("site_name")
-            manager_id = request.user.id
-            site_data.site_name = site_name
-            site_data.manager_id = manager_id
-            site_data.manager_name = request.user.first_name + " " + request.user.last_name
-            site_data.save()
-            messages.success(request,"Data Added Successfully")
-            return redirect("/sites/")
-        return render(request,"Mainpage/sites.html",{'sites_data':sites_data,"tab_name":"SiteData","redirect":"/sites/"})
+        print(request.user)
+        sites_data = SiteData.objects.filter(manager_user_name = request.user).all().values()
+        print(sites_data)
+        return render(request,"Mainpage/sites.html",{'sites_data':sites_data})
     else:
         return render(request,"Mainpage/sites.html")
 
