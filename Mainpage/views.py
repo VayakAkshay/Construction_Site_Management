@@ -43,6 +43,7 @@ def SitesPage(request):
             manager_id = request.user.id
             site_data.site_name = site_name
             site_data.manager_id = manager_id
+            site_data.manager_name = request.user.first_name + " " + request.user.last_name
             site_data.save()
             messages.success(request,"Data Added Successfully")
             return redirect("/sites/")
@@ -63,7 +64,8 @@ def ManageMaterial(request):
             material_name = request.POST.get("material_name")
             qty = request.POST.get("qty")
             remarks = request.POST.get("remarks")
-            material_data = MaterialsData(Date = date,manager_id = request.user.id,site_id = site_id,site_name = site_name,Material_name = material_name,work_details = details,actual_qty=qty,Remarks=remarks)
+            manager_name = request.user.first_name + " " + request.user.last_name
+            material_data = MaterialsData(Date = date,manager_id = request.user.id,manager_name = manager_name,site_id = site_id,site_name = site_name,Material_name = material_name,work_details = details,actual_qty=qty,Remarks=remarks)
             material_data.save()
             messages.success(request,"Data Added Successfully")
             return redirect("/materials/")
@@ -84,8 +86,9 @@ def ManageMachine(request):
             machinery = request.POST.get("machinery")
             days = request.POST.get("days")
             rate = request.POST.get("rate")
+            manager_name = request.user.first_name + " " + request.user.last_name
             amount = int(rate) * int(days)
-            rent_data = RentMachineryData(manager_id = request.user.id,Date=date,site_id=site_id,site_name=site_name,work_details=details,machinery_name=machinery,days=days,Amount = amount)
+            rent_data = RentMachineryData(manager_id = request.user.id,manager_name = manager_name,Date=date,site_id=site_id,site_name=site_name,work_details=details,machinery_name=machinery,days=days,Amount = amount)
             rent_data.save()
             messages.success(request,"Data Added Successfully")
             return redirect("/manage-machines/")
@@ -108,7 +111,8 @@ def ManageTransport(request):
             amount = request.POST.get("amount")
             froms = request.POST.get("from")
             to = request.POST.get("to")
-            transport_data = TransportData(manager_id = request.user.id,Date = date,site_id = site_id,site_name = site_name,vehical_number = vehical_num,Material_name = material,kilometer = km,Amount = amount,Deliver_from = froms,Deliver_To = to)
+            manager_name = request.user.first_name + " " + request.user.last_name
+            transport_data = TransportData(manager_id = request.user.id,manager_name = manager_name,Date = date,site_id = site_id,site_name = site_name,vehical_number = vehical_num,Material_name = material,kilometer = km,Amount = amount,Deliver_from = froms,Deliver_To = to)
             transport_data.save()
             messages.success(request,"Data Added Successfully")
             return redirect("/transport/")
@@ -130,7 +134,8 @@ def ManageLabour(request):
             details = request.POST.get("details")
             site_id = site_names.split(",")[0]
             site_name = site_names.split(",")[1]
-            labout_data = LabourData(manager_id = manager_id,labour_name = name,site_id = site_id,site_name = site_name,labour_age = age,labour_gender = gender,salary=salary,work_details = details)
+            manager_name = request.user.first_name + " " + request.user.last_name
+            labout_data = LabourData(manager_id = manager_id,manager_name = manager_name,labour_name = name,site_id = site_id,site_name = site_name,labour_age = age,labour_gender = gender,salary=salary,work_details = details)
             labout_data.save()
             messages.success(request,"Data Added Successfully")
             return redirect('/labour/')
@@ -149,7 +154,8 @@ def ManageGodownStocks(request):
             site_name = site_names.split(",")[1]
             qty = request.POST.get("qty")
             material = request.POST.get("material")
-            stock_data = StockData(manager_id = request.user.id,site_id=site_id,site_name=site_name,actual_qty = qty,Material_name = material)
+            manager_name = request.user.first_name + " " + request.user.last_name
+            stock_data = StockData(manager_id = request.user.id,manager_name = manager_name,site_id=site_id,site_name=site_name,actual_qty = qty,Material_name = material)
             stock_data.save()
             messages.success(request,"Data Added Successfully")
             return redirect('/godown/')
@@ -172,14 +178,13 @@ def ManageProfit(request):
         if request.method == "POST":
             date = request.POST.get("date")
             site_names = request.POST.get("site_name")
-            site_id = site_names.split(",")[0]
-            site_name = site_names.split(",")[1]
             time = request.POST.get("time")
             mode = request.POST.get("mode")
             payee = request.POST.get("payee")
             amount = request.POST.get("amount")
             remarks = request.POST.get("remarks")
-            income_data = IncomeData(manager_id = request.user.id,Date=date,Time=time,payment_mode = mode,payee_name = payee,Amount = amount,Remark = remarks)
+            manager_name = request.user.first_name + " " + request.user.last_name
+            income_data = IncomeData(manager_id = request.user.id,manager_name = manager_name,Date=date,Time=time,payment_mode = mode,payee_name = payee,Amount = amount,Remark = remarks)
             income_data.save()
             messages.success(request,"Data Added Successfully")
             return redirect('/accounting/')
@@ -193,14 +198,13 @@ def ManageExpenses(request):
         if request.method == "POST":
             date = request.POST.get("date")
             site_names = request.POST.get("site_name")
-            site_id = site_names.split(",")[0]
-            site_name = site_names.split(",")[1]
             time = request.POST.get("time")
             mode = request.POST.get("mode")
             payee = request.POST.get("payee")
             amount = request.POST.get("amount")
             remarks = request.POST.get("remarks")
-            expense_data = ExpenseData(manager_id = request.user.id,Date=date,Time=time,payment_mode = mode,payee_name = payee,Amount = amount,Remark = remarks)
+            manager_name = request.user.first_name + " " + request.user.last_name
+            expense_data = ExpenseData(manager_id = request.user.id,manager_name = manager_name,Date=date,Time=time,payment_mode = mode,payee_name = payee,Amount = amount,Remark = remarks)
             expense_data.save()
             messages.success(request,"Data Added Successfully")
             return redirect('/accounting/')
@@ -224,7 +228,8 @@ def ManageProgress(request):
             labour_name = labour_names.split(",")[1]
             progress = request.POST.get("progress")
             remarks = request.POST.get("remarks")
-            progress_data = WorkProgreeData(manager_id = request.user.id,Date = date,site_id = site_id,site_name = site_name,work_details = details,labour_id = labour_id,labour_name = labour_name,Work_progress = progress,Remark = remarks)
+            manager_name = request.user.first_name + " " + request.user.last_name
+            progress_data = WorkProgreeData(manager_id = request.user.id,manager_name = manager_name,Date = date,site_id = site_id,site_name = site_name,work_details = details,labour_id = labour_id,labour_name = labour_name,Work_progress = progress,Remark = remarks)
             progress_data.save()
             messages.success(request,"Data Added Successfully")
             return redirect('/work-progress/')
@@ -246,7 +251,8 @@ def ManageAttendance(request):
             labour_names = request.POST.get("labour_name")
             labour_id = labour_names.split(",")[0]
             labour_name = labour_names.split(",")[1]
-            attendance = LabourAttendance(manager_id = request.user.id,Date = date,site_id = site_id,site_name = site_name,work_details = details,labour_id = labour_id,labour_name=labour_name)
+            manager_name = request.user.first_name + " " + request.user.last_name
+            attendance = LabourAttendance(manager_id = request.user.id,manager_name = manager_name,Date = date,site_id = site_id,site_name = site_name,work_details = details,labour_id = labour_id,labour_name=labour_name)
             attendance.save()
             messages.success(request,"Data Added Successfully")
             return redirect("/attendance/")
@@ -266,7 +272,8 @@ def ManageMachinery(request):
             machinery = request.POST.get("machinery")
             rate = request.POST.get("rate")
             remarks = request.POST.get("remarks")
-            buy_machine = MachineryPurchaseData(manager_id = request.user.id,Date = date,site_id = site_id,site_name = site_name,machinery_name = machinery,Rate=rate,Remark = remarks)
+            manager_name = request.user.first_name + " " + request.user.last_name
+            buy_machine = MachineryPurchaseData(manager_id = request.user.id,manager_name = manager_name,Date = date,site_id = site_id,site_name = site_name,machinery_name = machinery,Rate=rate,Remark = remarks)
             buy_machine.save()
             messages.success(request,"Data Added Successfully")
             return redirect("/purchase-machine/")
@@ -277,8 +284,6 @@ def ManageMachinery(request):
 def ManageReports(request):
     if request.user.is_authenticated:
         sites_data = SiteData.objects.filter(manager_id = request.user.id).all().values()
-        if request.method == "POST":
-            pass
         return render(request,"Mainpage/reports.html",{"sites_data":sites_data})
     else:
         return render(request,"Mainpage/reports.html")

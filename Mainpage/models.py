@@ -5,6 +5,7 @@ import datetime
 class SiteData(models.Model):
     id = models.AutoField
     manager_id = models.TextField(max_length=100,default="")
+    manager_name = models.TextField(max_length=100,default="")
     site_name = models.TextField(max_length=100,default="")
     
 
@@ -12,6 +13,7 @@ class MaterialsData(models.Model):
     id = models.AutoField
     Date = models.DateField(default=datetime.date.today)
     manager_id = models.TextField(max_length=100,default="")
+    manager_name = models.TextField(max_length=100,default="")
     site_id = models.IntegerField(default=0)
     site_name = models.TextField(max_length=100,default="")
     Material_name = models.TextField(max_length=100,default="")
@@ -43,6 +45,7 @@ class MaterialsData(models.Model):
 class RentMachineryData(models.Model):
     id = models.AutoField
     manager_id = models.TextField(max_length=100,default="")
+    manager_name = models.TextField(max_length=100,default="")
     Date = models.DateField(default=datetime.date.today)
     site_id = models.IntegerField(default=0)
     site_name = models.TextField(max_length=100,default="")
@@ -75,6 +78,7 @@ class RentMachineryData(models.Model):
 class TransportData(models.Model):
     id = models.AutoField
     manager_id = models.TextField(max_length=100,default="")
+    manager_name = models.TextField(max_length=100,default="")
     Date = models.DateField(default=datetime.date.today)
     site_id = models.IntegerField(default=0)
     site_name = models.TextField(max_length=100,default="")
@@ -110,6 +114,7 @@ class TransportData(models.Model):
 class LabourData(models.Model):
     id = models.AutoField
     manager_id = models.TextField(max_length=100,default="")
+    manager_name = models.TextField(max_length=100,default="")
     labour_name = models.TextField(max_length=100,default="")
     site_id = models.IntegerField(default=0)
     site_name = models.TextField(max_length=100,default="")
@@ -144,6 +149,7 @@ class LabourData(models.Model):
 class StockData(models.Model):
     id = models.AutoField
     manager_id = models.TextField(max_length=100,default="")
+    manager_name = models.TextField(max_length=100,default="")
     site_id = models.IntegerField(default=0)
     site_name = models.TextField(max_length=100,default="")
     actual_qty = models.IntegerField(default=0)
@@ -174,6 +180,7 @@ class StockData(models.Model):
 class IncomeData(models.Model):
     id = models.AutoField
     manager_id = models.TextField(max_length=100,default="")
+    manager_name = models.TextField(max_length=100,default="")
     Date = models.DateField(default=datetime.date.today)
     Time = models.TimeField(default=datetime.datetime.now())
     payment_mode = models.TextField(max_length=100,default="")
@@ -207,6 +214,7 @@ class IncomeData(models.Model):
 class ExpenseData(models.Model):
     id = models.AutoField
     manager_id = models.TextField(max_length=100,default="")
+    manager_name = models.TextField(max_length=100,default="")
     Date = models.DateField(default=datetime.date.today)
     Time = models.TimeField(default=datetime.datetime.now())
     payment_mode = models.TextField(max_length=100,default="")
@@ -239,6 +247,7 @@ class ExpenseData(models.Model):
 class WorkProgreeData(models.Model):
     id = models.AutoField
     manager_id = models.TextField(max_length=100,default="")
+    manager_name = models.TextField(max_length=100,default="")
     Date = models.DateField(default=datetime.date.today)
     site_id = models.IntegerField(default=0)
     site_name = models.TextField(max_length=100,default="")
@@ -273,6 +282,7 @@ class WorkProgreeData(models.Model):
 class MachineryPurchaseData(models.Model):
     id = models.AutoField
     manager_id = models.TextField(max_length=100,default="")
+    manager_name = models.TextField(max_length=100,default="")
     Date = models.DateField(default=datetime.date.today)
     site_id = models.IntegerField(default=0)
     site_name = models.TextField(max_length=100,default="")
@@ -305,6 +315,7 @@ class MachineryPurchaseData(models.Model):
 class LabourAttendance(models.Model):
     id = models.AutoField
     manager_id = models.TextField(max_length=100,default="")
+    manager_name = models.TextField(max_length=100,default="")
     Date = models.DateField(default=datetime.date.today)
     site_id = models.IntegerField(default=0)
     site_name = models.TextField(max_length=100,default="")
