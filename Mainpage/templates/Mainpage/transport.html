@@ -41,7 +41,7 @@
                                     <label for="">Select Site:</label>
                                     <select class="form-select" name="site_name">
                                         {% for i in sites_data %}
-                                        <option value="{{i.manager_id}},{{i.site_name}}">{{i.site_name}}</option>
+                                        <option value="{{i.manager_user_name_id}},{{i.site_name}}">{{i.site_name}}</option>
                                         {% endfor %}
                                     </select>
                                 </div>
