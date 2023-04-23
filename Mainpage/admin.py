@@ -5,31 +5,31 @@ class SiteDataAdmin(admin.ModelAdmin):
     list_display = ["manager_user_name","site_name"]
 
 class MaterialsDataAdmin(admin.ModelAdmin):
-    list_display = ["manager_id","Date","site_id","site_name","Material_name","actual_qty"]
+    list_display = ["manager_name","Date","site_id","site_name","Material_name","actual_qty"]
 
 class RentMachineryDataAdmin(admin.ModelAdmin):
-    list_display = ["manager_id","Date","site_id","site_name","machinery_name","days","Amount"]
+    list_display = ["manager_name","Date","site_id","site_name","machinery_name","days","Amount"]
 
 class TransportDataAdmin(admin.ModelAdmin):
-    list_display = ["manager_id","Date","site_id","site_name","vehical_number","Material_name","kilometer","Amount","Deliver_from","Deliver_To"]
+    list_display = ["manager_name","Date","site_id","site_name","vehical_number","Material_name","kilometer","Amount","Deliver_from","Deliver_To"]
 
 class LabourDataAdmin(admin.ModelAdmin):
     list_display = ["manager_id","labour_name","site_id","site_name","labour_age","labour_gender","salary"]
 
 class StockDataAdmin(admin.ModelAdmin):
-    list_display = ["manager_id","site_id","site_name","actual_qty","Material_name"]
+    list_display = ["manager_name","site_id","site_name","actual_qty","Material_name"]
 
 class IncomeDataAdmin(admin.ModelAdmin):
-    list_display = ["manager_id","Date","Time","payment_mode","payee_name","Amount"]
+    list_display = ["manager_name","Date","Time","payment_mode","payee_name","Amount"]
 
 class ExpenseDataAdmin(admin.ModelAdmin):
-    list_display = ["manager_id","Date","Time","payment_mode","payee_name","Amount"]
+    list_display = ["manager_name","Date","Time","payment_mode","payee_name","Amount"]
 
 class WorkProgreeDataAdmin(admin.ModelAdmin):
-    list_display = ["manager_id","Date","site_id","site_name","labour_id","labour_name","Work_progress"]
+    list_display = ["manager_name","Date","site_id","site_name","labour_id","labour_name","Work_progress"]
 
 class MachineryPurchaseDataAdmin(admin.ModelAdmin):
-    list_display = ["manager_id","Date","site_id","site_name","machinery_name","Rate"]
+    list_display = ["manager_name","Date","site_id","site_name","machinery_name","Rate"]
 
 class LabourAttendanceAdmin(admin.ModelAdmin):
     list_display = ["manager_id","Date","site_id","site_name","labour_id","labour_name"]

@@ -37,7 +37,7 @@ def DashboardPage(request):
 def SitesPage(request):
     if request.user.is_authenticated:
         print(request.user)
-        sites_data = SiteData.objects.filter(manager_user_name = request.user).all().values()
+        sites_data = SiteData.objects.filter(manager_user_name_id = request.user).all().values()
         print(sites_data)
         return render(request,"Mainpage/sites.html",{'sites_data':sites_data})
     else:
@@ -45,7 +45,7 @@ def SitesPage(request):
 
 def ManageMaterial(request):
     if request.user.is_authenticated:
-        sites_data = SiteData.objects.filter(manager_id = request.user.id).all().values()
+        sites_data = SiteData.objects.filter(manager_user_name_id = request.user.id).all().values()
         material_data = MaterialsData.objects.filter(manager_id = request.user.id).all().values()
         if request.method == "POST":
             date = request.POST.get("date")
@@ -67,7 +67,7 @@ def ManageMaterial(request):
 
 def ManageMachine(request):
     if request.user.is_authenticated:
-        sites_data = SiteData.objects.filter(manager_id = request.user.id).all().values()
+        sites_data = SiteData.objects.filter(manager_user_name_id = request.user.id).all().values()
         machinery_data = RentMachineryData.objects.filter(manager_id = request.user.id).all().values()
         if request.method == "POST":
             date = request.POST.get("date")
@@ -90,7 +90,7 @@ def ManageMachine(request):
 
 def ManageTransport(request):
     if request.user.is_authenticated:
-        sites_data = SiteData.objects.filter(manager_id = request.user.id).all().values()
+        sites_data = SiteData.objects.filter(manager_user_name_id = request.user.id).all().values()
         transport_datas = TransportData.objects.filter(manager_id = request.user.id).all().values()
         if request.method == "POST":
             date = request.POST.get("date")
@@ -114,7 +114,7 @@ def ManageTransport(request):
 
 def ManageLabour(request):
     if request.user.is_authenticated:
-        sites_data = SiteData.objects.filter(manager_id = request.user.id).all().values()
+        sites_data = SiteData.objects.filter(manager_user_name_id = request.user.id).all().values()
         labour_datas = LabourData.objects.filter(manager_id = request.user.id).all().values()
         if request.method == "POST":
             manager_id = request.user.id
@@ -137,7 +137,7 @@ def ManageLabour(request):
 
 def ManageGodownStocks(request):
     if request.user.is_authenticated:
-        sites_data = SiteData.objects.filter(manager_id = request.user.id).all().values()
+        sites_data = SiteData.objects.filter(manager_user_name_id = request.user.id).all().values()
         stock_datas = StockData.objects.filter(manager_id = request.user.id).all().values()
         if request.method == "POST":
             date = request.POST.get("date")
@@ -157,7 +157,7 @@ def ManageGodownStocks(request):
 
 def ManageAccounting(request):
     if request.user.is_authenticated:
-        sites_data = SiteData.objects.filter(manager_id = request.user.id).all().values()
+        sites_data = SiteData.objects.filter(manager_user_name_id = request.user.id).all().values()
         profit_datas = IncomeData.objects.filter(manager_id = request.user.id).all().values()
         expense_datas = ExpenseData.objects.filter(manager_id = request.user.id).all().values()
         return render(request,"Mainpage/accounting.html",{"sites_data":sites_data,"profit_datas":profit_datas,"expense_datas":expense_datas,"tab_name1":"IncomeData","redirect":"/accounting/","tab_name2":"ExpenseData"})
@@ -166,7 +166,7 @@ def ManageAccounting(request):
 
 def ManageProfit(request):
     if request.user.is_authenticated:
-        sites_data = SiteData.objects.filter(manager_id = request.user.id).all().values()
+        sites_data = SiteData.objects.filter(manager_user_name_id = request.user.id).all().values()
         if request.method == "POST":
             date = request.POST.get("date")
             site_names = request.POST.get("site_name")
@@ -186,7 +186,7 @@ def ManageProfit(request):
 
 def ManageExpenses(request):
     if request.user.is_authenticated:
-        sites_data = SiteData.objects.filter(manager_id = request.user.id).all().values()
+        sites_data = SiteData.objects.filter(manager_user_name_id = request.user.id).all().values()
         if request.method == "POST":
             date = request.POST.get("date")
             site_names = request.POST.get("site_name")
@@ -206,7 +206,7 @@ def ManageExpenses(request):
     
 def ManageProgress(request):
     if request.user.is_authenticated:
-        sites_data = SiteData.objects.filter(manager_id = request.user.id).all().values()
+        sites_data = SiteData.objects.filter(manager_user_name_id = request.user.id).all().values()
         labour_data = LabourData.objects.filter(manager_id = request.user.id).all().values()
         progress_datas = WorkProgreeData.objects.filter(manager_id = request.user.id).all().values()
         if request.method == "POST":
@@ -231,7 +231,7 @@ def ManageProgress(request):
 
 def ManageAttendance(request):
     if request.user.is_authenticated:
-        sites_data = SiteData.objects.filter(manager_id = request.user.id).all().values()
+        sites_data = SiteData.objects.filter(manager_user_name_id = request.user.id).all().values()
         labour_data = LabourData.objects.filter(manager_id = request.user.id).all().values()
         attendance_datas = LabourAttendance.objects.filter(manager_id = request.user.id).all().values()
         if request.method == "POST":
@@ -254,7 +254,7 @@ def ManageAttendance(request):
 
 def ManageMachinery(request):
     if request.user.is_authenticated:
-        sites_data = SiteData.objects.filter(manager_id = request.user.id).all().values()
+        sites_data = SiteData.objects.filter(manager_user_name_id = request.user.id).all().values()
         machinery_datas = MachineryPurchaseData.objects.filter(manager_id = request.user.id).all().values()
         if request.method == "POST":
             date = request.POST.get("date")
@@ -275,7 +275,7 @@ def ManageMachinery(request):
 
 def ManageReports(request):
     if request.user.is_authenticated:
-        sites_data = SiteData.objects.filter(manager_id = request.user.id).all().values()
+        sites_data = SiteData.objects.filter(manager_user_name_id = request.user.id).all().values()
         return render(request,"Mainpage/reports.html",{"sites_data":sites_data})
     else:
         return render(request,"Mainpage/reports.html")
